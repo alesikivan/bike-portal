@@ -1,0 +1,96 @@
+section.news .cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.news .cont .item {
+  width: calc(50% - 10px);
+  border: 1px solid transparent;
+}
+
+section.news .cont .item:hover {
+  border: 1px solid #72BF44;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  color: #292C37;
+}
+
+section.news .cont .item:hover .text .p1 {
+  color: #72BF44;
+}
+
+section.news .cont .item .img {
+  position: relative;
+}
+
+section.news .cont .item .img img {
+  width: 100%;
+}
+
+section.news .cont .item .img .date {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 30px;
+  padding: 2px 16px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+section.news .cont .item .text {
+  background: #fff;
+  padding: 20px 20px 8px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.news .cont .item .text div {
+  height: 134px;
+  overflow: hidden;
+}
+
+section.news .cont .item .text div h6 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+
+section.news .cont .item .text div .p3 {
+  margin: 10px 0 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+
+section.news .cont .item .text .p1 {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  section.news .cont .item {
+    width: 100%;
+  }
+}

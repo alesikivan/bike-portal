@@ -1,0 +1,113 @@
+<section class="orders">
+  <div class="block">
+    <div class="block_1200">
+
+      <div class="head">
+        <p>Історія замовлень</p>
+      </div>
+
+      <form action="" class="search_form" id="search_form">
+        <div class="title">
+          <p>Дата</p>
+          <p>Номер</p>
+          <p>Сума, <span>₴</span></p>
+          <p>Статус</p>
+        </div>
+        <div class="search">
+          <div class="searchSmall">
+            <p>Пошук за:</p>
+            <div class="choise">
+              <p>Дата</p>
+              <div>
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+                </svg>
+              </div>
+              <div class="drop">
+                <span class="var_1">Дата</span>
+                <span class="var_2">Номер</span>
+                <span class="var_3">Сума</span>
+              </div>
+            </div>
+          </div>
+          <div class="item input_1">
+            <div>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 13C7.77408 13 8.96255 12.6334 9.96569 12H10.5865L13.59 15L15 13.59L12 10.5865V9.96569C12.6334 8.96255 13 7.77408 13 6.5C13 2.91015 10.0899 0 6.5 0C2.91015 0 0 2.91015 0 6.5C0 10.0899 2.91015 13 6.5 13ZM6.5 11C8.98528 11 11 8.98528 11 6.5C11 4.01472 8.98528 2 6.5 2C4.01472 2 2 4.01472 2 6.5C2 8.98528 4.01472 11 6.5 11Z" fill="#94969B"/>
+              </svg>
+              <input type="text">
+            </div>
+          </div>
+          <div class="item input_2">
+            <div>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 13C7.77408 13 8.96255 12.6334 9.96569 12H10.5865L13.59 15L15 13.59L12 10.5865V9.96569C12.6334 8.96255 13 7.77408 13 6.5C13 2.91015 10.0899 0 6.5 0C2.91015 0 0 2.91015 0 6.5C0 10.0899 2.91015 13 6.5 13ZM6.5 11C8.98528 11 11 8.98528 11 6.5C11 4.01472 8.98528 2 6.5 2C4.01472 2 2 4.01472 2 6.5C2 8.98528 4.01472 11 6.5 11Z" fill="#94969B"/>
+              </svg>
+              <input type="text">
+            </div>
+          </div>
+          <div class="item input_3">
+            <div>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 13C7.77408 13 8.96255 12.6334 9.96569 12H10.5865L13.59 15L15 13.59L12 10.5865V9.96569C12.6334 8.96255 13 7.77408 13 6.5C13 2.91015 10.0899 0 6.5 0C2.91015 0 0 2.91015 0 6.5C0 10.0899 2.91015 13 6.5 13ZM6.5 11C8.98528 11 11 8.98528 11 6.5C11 4.01472 8.98528 2 6.5 2C4.01472 2 2 4.01472 2 6.5C2 8.98528 4.01472 11 6.5 11Z" fill="#94969B"/>
+              </svg>
+              <input type="text">
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="merchandise" *ngFor="let i of [1, 2, 3, 4, 5]">
+
+        <a [routerLink]="['/order', '12']" class="info">
+          <div class="date">
+            <p class="p3">Дата</p>
+            <span>15.09.2021</span>
+          </div>
+          <div class="number">
+            <p class="p3">Номер</p>
+            <span>654654654654654</span>
+          </div>
+          <div class="sum">
+            <p class="p3">Сума</p>
+            <span>607.65</span>
+          </div>
+          <div class="status">
+            <p class="p3">Статус</p>
+            <span class="status">Назва статусу</span>
+          </div>
+        </a>
+        <a href="check.pdf" download class="download">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 0V6.58575L10.2928 4.29291L11.7071 5.70712L6.99995 10.4142L2.29285 5.70712L3.70706 4.29291L6 6.58585V0H8Z" fill="#94969B"/>
+            <path d="M2 9H0V14H14V9H12V12H2V9Z" fill="#94969B"/>
+          </svg>
+          <p><span>Рахунок у </span>.pdf</p>
+        </a>
+      </div>
+
+
+      <div class="nav">
+        <a href="#" class="prev">
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L6 6L2 2" stroke="" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#" class="vanish">5</a>
+        <div>...</div>
+        <a href="#">12</a>
+        <a href="#" class="next">
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L6 6L2 2" stroke="" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>

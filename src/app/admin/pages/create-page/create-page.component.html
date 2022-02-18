@@ -1,0 +1,46 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Создание поста</h1>
+
+  <div class="form-group" [ngClass]="{invalid: form.get('title')?.touched && form.get('title')?.invalid}">
+    <label for="title">Название</label>
+    <input
+      formControlName="title"
+      type="title"
+      class="form-control"
+      id="title"
+      placeholder="Введите название">
+    <div *ngIf="form.get('title')?.touched && form.get('title')?.invalid" class="validation">
+      <small
+        *ngIf="form.get('title')?.errors?.['required']"
+        class="form-text">Ввведите название поста</small>
+    </div>
+  </div>
+
+  <!-- <div class="form-group">
+    <label>Контект поста</label>
+
+  </div> -->
+
+  <div class="form-group" [ngClass]="{invalid: form.get('author')?.touched && form.get('author')?.invalid}">
+    <label for="author">Автор поста</label>
+    <input
+      formControlName="author"
+      type="author"
+      class="form-control"
+      id="author"
+      placeholder="Введите название">
+    <div *ngIf="form.get('author')?.touched && form.get('author')?.invalid" class="validation">
+      <small
+        *ngIf="form.get('author')?.errors?.['required']"
+        class="form-text">Ввведите автора поста</small>
+    </div>
+  </div>
+
+  <button
+    [disabled]="form.invalid"
+    class="btn btn-block btn-dark"
+    type="submit">
+    Создать пост
+  </button>
+
+</form>

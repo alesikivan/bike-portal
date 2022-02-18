@@ -1,0 +1,351 @@
+
+<section class="catalog">
+  <div class="block">
+    <div class="options" id="catalog_options">
+      <div class="number_OF_positions">
+        <p>Позицій на сторінці:</p>
+        <div class="quantity" (click)="productsCountToggle = !productsCountToggle ">
+          <span>{{productsCount}}</span>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+          <div class="drop" *ngIf="productsCountToggle">
+            <p
+              *ngFor="let l of productsPageLimits"
+              (click)="productsCount = l">
+              {{l}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="sort">
+        <p>Сортувати:</p>
+        <div class="sort_small">
+          <span>Дешевше</span>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+          </svg>
+        </div>
+        <div class="choise">
+          <div
+            (click)="productSortType = 'popular'"
+            [class.active]="productSortType === 'popular'">
+            Популярні
+          </div>
+          <div
+            (click)="productSortType = 'cheap'"
+            [class.active]="productSortType === 'cheap'">
+            Дешевше
+          </div>
+          <div
+            (click)="productSortType = 'expensive'"
+            [class.active]="productSortType === 'expensive'">
+            Дорожче
+          </div>
+          <div
+            (click)="productSortType = 'sale'"
+            [class.active]="productSortType === 'sale'">
+            Акційні
+          </div>
+        </div>
+      </div>
+      <div class="view">
+        <div class="grid" [class.active]="productViewType === 'grid'" (click)="productViewType = 'grid'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="8" height="8" rx="1" fill=""/>
+            <rect x="2" y="14" width="8" height="8" rx="1" fill=""/>
+            <rect x="14" y="2" width="8" height="8" rx="1" fill=""/>
+            <rect x="14" y="14" width="8" height="8" rx="1" fill=""/>
+          </svg>
+        </div>
+        <div class="rows" [class.active]="productViewType === 'rows'" (click)="productViewType = 'rows'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="8" rx="1" fill=""/>
+            <rect x="2" y="14" width="20" height="8" rx="1" fill=""/>
+          </svg>
+        </div>
+        <div class="list" [class.active]="productViewType === 'list'" (click)="productViewType = 'list'">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="8" height="8" rx="1" fill=""/>
+            <rect x="2" y="14" width="8" height="8" rx="1" fill=""/>
+            <rect x="12" y="2" width="10" height="4" rx="1" fill=""/>
+            <rect x="12" y="14" width="10" height="4" rx="1" fill=""/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="show_filters" id="show_filters">
+      <div>
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2.5" y="5" width="20" height="2" rx="0.5" fill=""/>
+          <rect x="7.5" y="17" width="10" height="2" rx="0.5" fill=""/>
+          <rect x="4.5" y="11" width="16" height="2" rx="0.5" fill=""/>
+        </svg>
+      </div>
+      <p>Фільтри</p>
+    </button>
+
+    <div class="content_block" id="content_block">
+      <div class="markers" id="markers1">
+        <div class="markers_block">
+          <div class="head" (click)="filtersToggle = !filtersToggle">
+            <p>Фільтри</p>
+            <div>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" [class.trans180]="!filtersToggle">
+                <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+              </svg>
+            </div>
+          </div>
+          <div class="rollUp_block" [style.display]="filtersToggle ? 'block' : 'none'">
+            <div class="choice" *ngIf="addedFilters.length">
+              <div class="you_choosed">
+                <p>Ви обрали:</p>
+                <div class="clear" id="clear" (click)="removeProductFilters(addedFilters, 'filters')">
+                  <p>Очистити</p>
+                  <div>
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 0.999954L5 4.99995M5 4.99995L9 0.999954M5 4.99995L1 8.99995M5 4.99995L9 8.99995" stroke="" stroke-width="2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <ng-container *ngFor="let f of filters">
+                <div
+                *ngIf="addedFilters.includes(f.id)"
+                class="selected_object">
+                  <p>{{f.title}}</p>
+                  <div (click)="removeProductFilters([f.id], 'filters')">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 0.999954L5 4.99995M5 4.99995L9 0.999954M5 4.99995L1 8.99995M5 4.99995L9 8.99995" stroke="" stroke-width="2"/>
+                    </svg>
+                  </div>
+              </div>
+              </ng-container>
+
+            </div>
+            <div class="checkboxes">
+
+              <ng-container *ngIf="filtersPreview; else loadedFilters">
+                <app-preview></app-preview>
+                <app-preview></app-preview>
+                <app-preview></app-preview>
+              </ng-container>
+
+              <ng-template #loadedFilters>
+                <label
+                  *ngFor="let f of filters"
+                  class="checkbox">
+                    <input
+                      [checked]="addedFilters.includes(f.id)"
+                      type="checkbox"
+                      (change)="selectProductFilter(f.id, 'filters')">
+                    <span>{{f.title}}</span>
+                </label>
+              </ng-template>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="cards_block">
+          <div
+            [class.formation_1]="productViewType === 'grid'"
+            [class.formation_2]="productViewType === 'rows'"
+            [class.formation_3]="productViewType === 'list'"
+            class="item"
+            *ngFor="let i of [1, 2, 4, 5, 6, 7, 8, 9, 10]">
+            <a [routerLink]="['/product', '12']" class="img">
+              <picture>
+                <source [srcset]="'assets/img/catalog/item-img.webp'" type="image/webp">
+                <img [src]="'assets/img/catalog/item-img.jpg'" alt="img">
+              </picture>
+              <div class="novelty">Новинка</div>
+            </a>
+            <div class="info">
+              <div class="description">
+                <p class="vendor_code">
+                  Артикул: LENS-MAST-EC
+                </p>
+                <h6>Лінзи до окулярів Tifosi Mast Extreme Contrast (EC)</h6>
+                <p class="text">
+                  Лінзи з підвищеною контрастністю Extreme Contrast™ (EC) мають пропускну здатність 39,1% та відфільтровують синій колір, підвищуючи контрастність на зеленому фоні Лінзи з підвищеною контрастністю Extreme Contrast™ (EC) мають пропускну здатність 39,1% та відфільтровують синій колір, підвищуючи контрастність на зеленому фоні Лінзи з підвищеною контрастністю Extreme Contrast™ (EC) мають пропускну здатність 39,1% та відфільтровують синій колір, підвищуючи контрастність на зеленому фоні
+                </p>
+              </div>
+              <div class="for_buyer">
+                <div class="prices">
+                  <div class="wholesale noDiscount">
+                    <p>Гуртова ціна</p>
+                    <div class="discount">
+                      <div class="old_price">1500</div>
+                      <div class="percent">-30%</div>
+                    </div>
+                    <div class="present_price">1000 <span> ₴</span></div>
+                  </div>
+                  <div class="extra_charge">
+                    <p>Націнка</p>
+                    <div class="percent">80<span> %</span></div>
+                  </div>
+                  <div class="retail_price">
+                    <p>РРЦ</p>
+                    <div class="price">10 000<span> ₴</span></div>
+                    <p>РРЦ за шт. 1000<span> ₴</span></p>
+                  </div>
+                </div>
+                <div class="order">
+                  <div class="in_stock">
+                    <p>На складі:<span>> 40 шт.</span></p>
+                  </div>
+                  <div class="counter">
+                    <div class="minus">
+                      <svg width="16" height="2" viewBox="0 0 16 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 1.00008H0" stroke="" stroke-width="2"/>
+                      </svg>
+                    </div>
+                    <input type="" name="" class="number" value="1" placeholder="1">
+                    <div class="plus">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 7.62939e-05V8.00008M8 8.00008H16M8 8.00008H0M8 8.00008V16.0001" stroke="" stroke-width="2"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <button type="button" class="btn2">
+                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 20C10.1046 20 11 19.1046 11 18C11 16.8954 10.1046 16 9 16C7.89543 16 7 16.8954 7 18C7 19.1046 7.89543 20 9 20Z" fill=""/>
+                      <path d="M19 18C19 19.1046 18.1046 20 17 20C15.8954 20 15 19.1046 15 18C15 16.8954 15.8954 16 17 16C18.1046 16 19 16.8954 19 18Z" fill=""/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.59468 0.378732C4.53904 0.156148 4.33905 0 4.10961 0H0.5C0.223858 0 0 0.223858 0 0.5V1.5C0 1.77614 0.223858 2 0.5 2H3L5.82112 14.2249C5.92583 14.6786 6.32986 15 6.79551 15H19.3636C19.8469 15 20.2611 14.6544 20.3475 14.1789L21.9839 5.17889C22.0955 4.56505 21.6239 4 21 4H6.28078C5.89648 4 5.55349 3.78096 5.38678 3.44828C5.35443 3.38372 5.32872 3.31488 5.31063 3.24254C5.07199 2.28794 4.82864 1.33449 4.59468 0.378732ZM5.97199 5.98418L7.59103 13H18.5291L19.8018 6H6.28078C6.17674 6 6.07371 5.99465 5.97199 5.98418Z" fill=""/>
+                    </svg>
+                    <p>У кошик</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="markers" id="markers2">
+        <div class="markers_block">
+          <div class="head" (click)="markersToggle = !markersToggle">
+            <p>Маркери</p>
+            <div>
+              <svg [class.trans180]="!markersToggle" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="trans180">
+                <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+              </svg>
+            </div>
+          </div>
+          <div class="rollUp_block" *ngIf="markersToggle">
+            <div class="choice" *ngIf="addedMarkers.length">
+              <div class="you_choosed">
+                <p>Ви обрали:</p>
+                <span class="numberOFselected">{{addedMarkers.length}}</span>
+              </div>
+            </div>
+            <div class="checkboxes">
+              <div class="visible_checkboxes">
+
+                <label
+                  *ngFor="let m of markers"
+                  class="checkbox">
+                    <input
+                      [checked]="addedMarkers.includes(m.id)"
+                      type="checkbox"
+                      (change)="selectProductFilter(m.id, 'markers')">
+                    <span>{{m.title}}</span>
+                </label>
+
+              </div>
+            </div>
+            <button (click)="loadMarker('markers')" type="button" class="show_more">Показати більше</button>
+          </div>
+        </div>
+        <div class="markers_block">
+          <div class="head" (click)="brandsToggle = !brandsToggle">
+            <p>Бренди</p>
+            <div>
+              <svg [class.trans180]="!brandsToggle" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="trans180">
+                <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+              </svg>
+            </div>
+          </div>
+          <div class="rollUp_block" *ngIf="brandsToggle">
+            <div class="choice" *ngIf="addedBrands.length">
+              <div class="you_choosed">
+                <p>Ви обрали:</p>
+                <span class="numberOFselected">{{addedBrands.length}}</span>
+              </div>
+            </div>
+            <div class="checkboxes">
+              <div class="visible_checkboxes">
+                <label
+                  *ngFor="let b of brands"
+                  class="checkbox">
+                    <input
+                      [checked]="addedBrands.includes(b.id)"
+                      type="checkbox"
+                      (change)="selectProductFilter(b.id, 'brands')">
+                    <span>{{b.title}}</span>
+                </label>
+              </div>
+            </div>
+            <button (click)="loadMarker('brands')" type="button" class="show_more">Показати більше</button>
+          </div>
+        </div>
+        <div class="markers_block">
+          <div class="head" (click)="categoriesToggle = !categoriesToggle">
+            <p>Категорії</p>
+            <div>
+              <svg [class.trans180]="!categoriesToggle" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg" class="trans180">
+                <path d="M10 2L6 6L2 2" stroke="#292C37" stroke-width="2" stroke-linecap="square"/>
+              </svg>
+            </div>
+          </div>
+          <div class="rollUp_block" *ngIf="categoriesToggle">
+            <div class="choice" *ngIf="addedCategories.length">
+              <div class="you_choosed">
+                <p>Ви обрали:</p>
+                <span class="numberOFselected">{{addedCategories.length}}</span>
+              </div>
+            </div>
+            <div class="checkboxes">
+              <div class="visible_checkboxes">
+                <label
+                  *ngFor="let c of categories"
+                  class="checkbox">
+                    <input
+                      [checked]="addedCategories.includes(c.id)"
+                      type="checkbox"
+                      (change)="selectProductFilter(c.id, 'categories')">
+                    <span>{{c.title}}</span>
+                </label>
+              </div>
+            </div>
+            <button (click)="loadMarker('categories')" type="button" class="show_more">Показати більше</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <a href="#" class="prev">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2L6 6L2 2" stroke="" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+      </a>
+      <a class="active" href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#" class="vanish">5</a>
+      <div>...</div>
+      <a href="#">12</a>
+      <a href="#" class="next">
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2L6 6L2 2" stroke="" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

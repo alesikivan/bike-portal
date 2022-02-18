@@ -1,0 +1,49 @@
+
+  <section class="news">
+  	<div class="block">
+      <div class="block_1200">
+
+      	<div class="cont">
+      		<a href="#" class="item" *ngFor="let i of [1, 2, 3, 4]">
+      			<div class="img">
+              <picture>
+                <source [srcset]="'assets/img/news.webp'" type="image/webp">
+                <img [src]="'assets/img/news.jpg'" alt="img">
+              </picture>
+      				<div class="date">11.11.2021</div>
+      			</div>
+      			<div class="text">
+      				<div>
+	    					<h6>Заголовок новини</h6>
+	    					<p class="p3">Насоси GIYO вже багато років зарекомендували себе як надійний партнер всіх велосипедистів у кожній подорожі. Найпопулярніший насос професіоналів і велолюбителів. Лідерство компанії полягає у ...</p>
+    					</div>
+    					<p class="p1">Читати далі</p>
+    				</div>
+      		</a>
+
+      	</div>
+
+      	<div class="nav">
+	        <a href="#" class="prev">
+	          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+	            <path d="M10 2L6 6L2 2" stroke="" stroke-width="2" stroke-linecap="square"/>
+	          </svg>
+	        </a>
+	        <a class="active" href="#">1</a>
+	        <a href="#">2</a>
+	        <a href="#">3</a>
+	        <a href="#">4</a>
+	        <a href="#" class="vanish">5</a>
+	        <div>...</div>
+	        <a href="#">12</a>
+	        <a href="#" class="next">
+	          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+	            <path d="M10 2L6 6L2 2" stroke="" stroke-width="2" stroke-linecap="square"/>
+	          </svg>
+	        </a>
+	      </div>
+
+      </div>
+
+  	</div>
+  </section>

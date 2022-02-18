@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .main-header {
+
+  }
+
+  .content {
+    flex: 1 0 auto;
+  }
+  .main-footer {
+    margin-top: 20px;
+    min-height: 30px;
+    border-top: 1px solid #ccc;
+    flex: 0 0 auto;
+  }
+}
+
+.validation {
+  small {
+    color: #FF5959;
+  }
+}
+
+.container-special {
+  min-height: 100vh;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}

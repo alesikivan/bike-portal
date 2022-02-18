@@ -1,0 +1,28 @@
+section.messages-Add .head {
+  margin: 0 auto 20px;
+  max-width: 1200px;
+}
+
+section.messages-Add .messages-Add_form {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+}
+
+section.messages-Add .messages-Add_form .p3 {
+  color: #94969B;
+}
+
+section.messages-Add .messages-Add_form input[type=text] {
+  width: 100%;
+  font-size: 18px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #EAEAEB;
+  color: #292C37;
+  margin: 5px 0 20px;
+}
+
+section.messages-Add .messages-Add_form input[type=text]:focus {
+  border-bottom: 1px solid #292C37;
+}

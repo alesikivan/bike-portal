@@ -1,0 +1,273 @@
+section.profile h6 {
+  margin-bottom: 20px;
+}
+
+section.profile .name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+section.profile .name p {
+  margin-bottom: 4px;
+}
+
+section.profile .name .p3 {
+  color: #94969B;
+}
+
+section.profile .name .part {
+  width: calc(25% - 15px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+section.profile .name .part.feedback {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+}
+
+section.profile .name .part.feedback .img {
+  width: 20px;
+}
+
+section.profile .name .part.feedback .img img {
+  width: 100%;
+}
+
+section.profile .name .part.feedback .info {
+  width: calc(100% - 30px);
+}
+
+section.profile .name .part.feedback .info a {
+  color: #72BF44;
+}
+
+section.profile .name .part.feedback .info button {
+  margin-top: 10px;
+  width: 100%;
+  display: block;
+}
+
+section.profile .name .control {
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #EAEAEB;
+}
+
+section.profile .name .control button {
+  width: 245px;
+  display: block;
+}
+
+section.profile .orderFromFile {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+section.profile .orderFromFile h5 {
+  margin-bottom: 10px;
+}
+
+section.profile .orderFromFile form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+section.profile .orderFromFile form.f1 {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #EAEAEB;
+}
+
+section.profile .orderFromFile form .item {
+  width: calc(33.33% - 14px);
+}
+
+section.profile .orderFromFile form .item p {
+  margin-bottom: 10px;
+}
+
+section.profile .orderFromFile form .item .field {
+  width: 100%;
+  padding: 10px 15px 10px 10px;
+  border: 1px solid #EAEAEB;
+  position: relative;
+  cursor: pointer;
+}
+
+section.profile .orderFromFile form .item .field .click_area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+section.profile .orderFromFile form .item .field  input[type=text] {
+  font-size: 14px;
+  width: 100%;
+  margin-right: 15px;
+}
+
+section.profile .orderFromFile form .item .field .select {
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.profile .orderFromFile form .item .field .select svg {
+  display: block;
+}
+
+section.profile .orderFromFile form .item .field .drop {
+  padding: 5px 0;
+  width: 100%;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  display: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  background: #fff;
+  border: 1px solid #EAEAEB;
+  z-index: 2;
+}
+
+section.profile .orderFromFile form .item .field .drop span {
+  display: block;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+section.profile .orderFromFile form .item .field .drop span:hover {
+  background: #F2F2F4;
+}
+
+section.profile .orderFromFile form .item .btn2 {
+  width: 100%;
+  display: block;
+}
+
+section.profile .orderFromFile form .item input#profile_addFile,
+section.profile .orderFromFile form .item input#profile_submit {
+  display: none;
+}
+
+section.profile .orderFromFile form .item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  border: 1px dashed #94969B;
+  cursor: pointer;
+}
+
+section.profile .orderFromFile form .item label p {
+  margin: 0;
+}
+
+section.profile .orderFromFile form .item label p span {
+  color: #94969B;
+}
+
+section.profile .orderFromFile form .item label.profile_submit {
+  border: none;
+  background: #72BF44;
+  color: #fff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.profile .orderFromFile form .item label.profile_submit svg {
+  fill: #fff;
+}
+
+section.profile .orderFromFile form .item label.profile_submit:hover {
+  background: #67AC3D;
+}
+
+section.profile .last_orders .next {
+  display: block;
+  font-size: 18px;
+  padding: 10px 13px;
+  background: #fff;
+  width: 160px;
+  text-align: center;
+  margin: 20px 0 0 auto;
+}
+
+@media (max-width: 1024px) {
+  section.profile .name .part {
+    width: calc(33.33% - 14px);
+  }
+
+  section.profile .name .part.feedback {
+    width: 100%;
+  }
+
+  section.profile .name .part.feedback .info button {
+    max-width: 245px;
+  }
+}
+
+@media (max-width: 870px) {
+  section.profile .orderFromFile form .item {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  section.profile .name .part {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  section.profile .orderFromFile form .item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  section.profile .name .part {
+    width: 100%;
+  }
+}

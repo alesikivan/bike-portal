@@ -1,0 +1,65 @@
+section.complaints .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+section.complaints .buttons .btn2 {
+  font-size: 16px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+section.complaints .buttons .instruction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  background: #fff;
+}
+
+section.complaints .buttons .instruction p {
+  margin-left: 6px;
+}
+
+section.complaints .notification div.not5 .p3 {
+  opacity: 0;
+}
+
+section.complaints .notification div.not5 .p2 {
+  color: #292C37;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  section.complaints .notification div.not5 {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+@media (max-width: 380px) {
+  section.complaints .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+
+  section.complaints .buttons a {
+    width: 100%;
+  }
+}

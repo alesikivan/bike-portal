@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <header class="main-header">
+    <div class="container">
+      <h1>
+        <a routerLink="/">Angular admin</a>
+      </h1>
+      <nav>
+        <ul *ngIf="auth.isAuthenticated()">
+          <li>
+            <a [routerLink]="['/admin', 'dashboard']">Главная</a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'create']">Создать</a>
+          </li>
+          <li>
+            <a [routerLink]="['/admin', 'user', 'index']">Пользователи</a>
+          </li>
+          <li>
+            <a href="#" (click)="logout($event)">Выйти</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <app-notifications></app-notifications>
+
+  <div class="content container container-special admin-content">
+    <div class="admin-menu" *ngIf="auth.isAuthenticated()">
+      <admin-menu></admin-menu>
+    </div>
+    <div class="admin-page">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <div class="main-footer">
+  </div>
+</div>

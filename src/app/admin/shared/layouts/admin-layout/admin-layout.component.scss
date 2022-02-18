@@ -1,0 +1,53 @@
+
+.main-footer {
+  border-top: 1px solid #000;
+}
+
+.main-header {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: normal;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+      ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        li {
+          list-style: none;
+          margin: 0 10px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.admin-content {
+  margin-top: 1rem;
+  display: flex;
+  .admin-menu {
+    margin-right: 1rem;
+  }
+
+  .admin-page {
+    width: 100%;
+  }
+}

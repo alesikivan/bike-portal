@@ -1,0 +1,172 @@
+
+section.complaints-Add .complaints-Add_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+section.complaints-Add .complaints-Add_form .fields {
+  background: #fff;
+  padding: 20px;
+  width: calc(100% - 220px);
+}
+
+section.complaints-Add .complaints-Add_form .fields p {
+  color: #94969B;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs div input {
+  font-size: 18px;
+  width: 100%;
+  border-bottom: 1px solid #EAEAEB;
+  padding-bottom: 5px;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs div input:focus {
+  border-bottom: 1px solid #292C37;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs div.vendor_code {
+  width: 150px;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs div.name {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs div.quantity {
+  width: 100px;
+}
+
+section.complaints-Add .complaints-Add_form .fields .inputs div.term {
+  width: 150px;
+}
+
+section.complaints-Add .complaints-Add_form .info {
+  background: #fff;
+  padding: 10px;
+  width: 200px;
+}
+
+section.complaints-Add .complaints-Add_form .info p {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+section.complaints-Add .complaints-Add_form .info img {
+  width: 100%;
+}
+
+section.complaints-Add .buttons {
+  width: calc(100% - 220px);
+}
+
+section.complaints-Add .buttons button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  width: 100%;
+  background: #fff;
+}
+
+section.complaints-Add .buttons button p {
+  margin-left: 14px;
+}
+
+section.complaints-Add .buttons label {
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  section.complaints-Add .complaints-Add_form .fields .inputs {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  section.complaints-Add .complaints-Add_form .fields .inputs div.vendor_code,
+  section.complaints-Add .complaints-Add_form .fields .inputs div.name,
+  section.complaints-Add .complaints-Add_form .fields .inputs div.quantity,
+  section.complaints-Add .complaints-Add_form .fields .inputs div.term {
+    width: calc(50% - 10px);
+  }
+
+  section.complaints-Add .complaints-Add_form .info {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+
+@media (max-width: 715px) {
+  section.complaints-Add .complaints-Add_form .fields .inputs div.vendor_code,
+  section.complaints-Add .complaints-Add_form .fields .inputs div.name,
+  section.complaints-Add .complaints-Add_form .fields .inputs div.quantity,
+  section.complaints-Add .complaints-Add_form .fields .inputs div.term {
+    width: 100%;
+  }
+
+  section.complaints-Add .buttons input,
+  section.complaints-Add .buttons label {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  section.complaints-Add .complaints-Add_form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  section.complaints-Add .complaints-Add_form .fields {
+    width: 100%;
+  }
+
+  section.complaints-Add .complaints-Add_form .info {
+    width: 100%;
+  }
+
+  section.complaints-Add .complaints-Add_form .info .img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  section.complaints-Add .complaints-Add_form .info .img img {
+    width: 90px;
+    margin-left: 10px;
+  }
+
+  section.complaints-Add .buttons {
+    width: 100%;
+  }
+}

@@ -1,0 +1,120 @@
+<section class="order">
+  <div class="block">
+    <div class="block_1200">
+
+      <div class="head">
+        <p>Замовлення 4654654654654</p>
+      </div>
+
+      <div class="content">
+        <div class="title">
+          <div>
+            <p>Дата</p>
+            <h6>15.09.2021</h6>
+          </div>
+          <div>
+            <p>Номер</p>
+            <h6>654654646546</h6>
+          </div>
+          <div>
+            <p>Статус</p>
+            <h6>Назва статусу</h6>
+          </div>
+          <a href="check.pdf" download class="download">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 0V6.58575L10.2928 4.29291L11.7071 5.70712L6.99995 10.4142L2.29285 5.70712L3.70706 4.29291L6 6.58585V0H8Z" fill="#94969B"/>
+              <path d="M2 9H0V14H14V9H12V12H2V9Z" fill="#94969B"/>
+            </svg>
+            <p>Рахунок у .pdf</p>
+          </a>
+        </div>
+        <div class="item heading">
+          <div class="first_block">
+            <div class="photo">
+              <p>Фото</p>
+            </div>
+            <div class="vendor_code">
+              <p>Артикул</p>
+            </div>
+            <div class="name">
+              <p>Найменування</p>
+            </div>
+          </div>
+          <div class="second_block">
+            <div class="price">
+              <p>Ціна, ₴</p>
+            </div>
+            <div class="quantity">
+              <p>Кількість</p>
+            </div>
+            <div class="pieces">
+              <p>Од. вим.</p>
+            </div>
+            <div class="sum">
+              <p>Сума, ₴</p>
+            </div>
+          </div>
+        </div>
+        <div class="item" *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8]">
+          <a [routerLink]="['/product', '12']" target="_blank" class="first_block">
+            <div class="photo">
+              <picture>
+                <source [srcset]="'assets/img/product/product.webp'" type="image/webp">
+                <img [src]="'assets/img/product/product.jpg'" alt="img">
+              </picture>
+            </div>
+            <div class="vendor_code">
+              <p>Артикул</p>
+              <div>LENS-MAST-EC</div>
+            </div>
+            <div class="name">
+              <p>Найменування</p>
+              <div>Лінзи до окулярів Tifosi Mast Extreme Contrast (EC)</div>
+            </div>
+          </a>
+          <div class="second_block">
+            <div class="price">
+              <p>Ціна, ₴</p>
+              <div>607.65</div>
+            </div>
+            <div class="quantity">
+              <p>Кількість</p>
+              <div>10</div>
+            </div>
+            <div class="pieces">
+              <p>Од. вим.</p>
+              <div>шт.</div>
+            </div>
+            <div class="sum">
+              <p>Сума, ₴</p>
+              <div>6076.5</div>
+            </div>
+          </div>
+        </div>
+        <div class="total">
+          <p class="p2">Разом:</p>
+          <p class="p1">607.65 ₴</p>
+        </div>
+        <div class="delivery">
+          <h6>Доставка</h6>
+          <p class="p2">Адреса:</p>
+          <p class="p1">Київська обл., с. Чайки, вул. Валерія Лобановського, 25</p>
+          <p class="p2">Отримувач:</p>
+          <p class="p1">Константинопольский Константин Константинович</p>
+        </div>
+        <div class="foot">
+          <div>
+            <p class="p2">Сума знижки:</p>
+            <p class="p1">107.65 ₴</p>
+          </div>
+          <div>
+            <p class="p2">Всього на суму:</p>
+            <p class="p1">1607.65 ₴</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
